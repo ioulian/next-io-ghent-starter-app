@@ -27,7 +27,7 @@ const theme = {
     slow: "400ms",
   },
   borderRadius: {
-    normal: 4,
+    normal: "4px",
   },
   floating: {
     tooltip: {

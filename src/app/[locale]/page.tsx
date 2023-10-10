@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { css } from "@linaria/core";
+import { css, cx } from "@linaria/core";
 
 import { buildThemeCSSVars } from "@/components/styles/utils";
 
@@ -50,7 +50,7 @@ export default function Home() {
         />
       </div>
 
-      <div className={`${styles.grid} ${anotherTheme}`}>
+      <div className={cx(styles.grid, anotherTheme)}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}

@@ -11,6 +11,8 @@ const sourceSansPro = Source_Sans_3({
   weight: ["400", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
+  // Must be the same as in theme
+  // We can't use function here to return the name...
   variable: "--theme-fonts-familyHeadings",
 });
 
