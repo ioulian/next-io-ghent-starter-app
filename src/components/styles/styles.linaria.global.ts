@@ -1,6 +1,6 @@
 import { css } from "@linaria/core";
 
-import { getThemeVariable } from "./utils";
+import { themeVar } from "./utils";
 
 export const globals = css`
   :global() {
@@ -16,10 +16,10 @@ export const globals = css`
     }
 
     body {
-      font-family: var(${getThemeVariable("fonts.familyRegular")});
+      font-family: var(${themeVar("fonts.familyRegular")});
       font-size: 1rem;
       line-height: 1.25rem;
-      color: var(${getThemeVariable("colors.body")});
+      color: var(${themeVar("colors.body")});
       letter-spacing: 0.01em;
     }
 
@@ -45,7 +45,7 @@ export const globals = css`
     }
 
     a {
-      color: var(${getThemeVariable("colors.primary")});
+      color: var(${themeVar("colors.primary")});
 
       &:hover {
         text-decoration: none;
@@ -79,7 +79,7 @@ export const globals = css`
       outline-offset: 4px;
 
       &:focus-visible {
-        outline: 2px solid var(${getThemeVariable("colors.primary")});
+        outline: 2px solid var(${themeVar("colors.primary")});
       }
     }
 
@@ -120,12 +120,12 @@ export const globals = css`
     h4,
     h5,
     h6 {
-      font-family: var(${getThemeVariable("fonts.familyHeadings")});
+      font-family: var(${themeVar("fonts.familyHeadings")});
       margin: 0;
     }
 
     .app-dialog-overlay {
-      background-color: var(${getThemeVariable("colors.backdrop")}) !important;
+      background-color: var(${themeVar("colors.backdrop")}) !important;
       // TODO: remove if performance suffers
       backdrop-filter: blur(10px);
     }
@@ -138,9 +138,7 @@ export const globals = css`
     .ReactModalPortal {
       .ReactModal {
         &__Overlay {
-          background-color: var(
-            ${getThemeVariable("colors.backdrop")}
-          ) !important;
+          background-color: var(${themeVar("colors.backdrop")}) !important;
           overflow-y: auto;
           overflow-x: hidden;
           opacity: 0;

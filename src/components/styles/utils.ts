@@ -20,6 +20,8 @@ export const getThemeVariable = (
   return `--theme-${key.replaceAll(".", "-")}`;
 };
 
+export const themeVar = getThemeVariable;
+
 export const getThemeCSSVar = (
   key: string,
   value: string | number | object,
