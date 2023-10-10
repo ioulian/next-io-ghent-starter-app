@@ -125,9 +125,7 @@ export const globals = css`
     }
 
     .app-dialog-overlay {
-      background-color: var(
-        ${getThemeVariable("colors.backdropColor")}
-      ) !important;
+      background-color: var(${getThemeVariable("colors.backdrop")}) !important;
       // TODO: remove if performance suffers
       backdrop-filter: blur(10px);
     }
@@ -141,7 +139,7 @@ export const globals = css`
       .ReactModal {
         &__Overlay {
           background-color: var(
-            ${getThemeVariable("colors.backdropColor")}
+            ${getThemeVariable("colors.backdrop")}
           ) !important;
           overflow-y: auto;
           overflow-x: hidden;

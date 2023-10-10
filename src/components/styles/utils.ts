@@ -1,4 +1,4 @@
-import theme from "./theme";
+import type theme from "./theme";
 
 type NestedKeyOf<ObjectType> = ObjectType extends object
   ? {
@@ -7,7 +7,12 @@ type NestedKeyOf<ObjectType> = ObjectType extends object
         | `${Key & string}.${NestedKeyOf<ObjectType[Key]>}`;
     }[keyof ObjectType]
   : never;
-export default NestedKeyOf;
+
+type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
+  : T;
 
 export const getThemeVariable = (
   key: NestedKeyOf<typeof theme>,
@@ -31,8 +36,10 @@ export const getThemeCSSVar = (
   --theme-${key}: ${value};`;
 };
 
-export const buildThemeCSSVars = (): string => {
-  return Object.entries(theme).reduce(
+export const buildThemeCSSVars = (
+  themeVars: DeepPartial<typeof theme>,
+): string => {
+  return Object.entries(themeVars).reduce(
     (acc, [currentKey, currentValue]) =>
       `${acc}${getThemeCSSVar(`${currentKey}`, currentValue)}`,
     "",

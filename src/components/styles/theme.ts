@@ -4,46 +4,46 @@ const theme = {
     black: "#000",
     primary: "#f38a5d",
     body: "#3C4346",
-    backdropColor: "rgba(0, 0, 0, 0.5)",
+    backdrop: "rgba(0, 0, 0, 0.5)",
   },
   fonts: {
     familyRegular: "Arial, sans-serif",
     familyHeadings: "Arial, sans-serif",
   },
   breakpoints: {
-    smallPhone: 320,
-    phone: 375,
-    tablet: 768,
-    desktop: 1024,
-    largeDesktop: 1440,
+    smallPhone: "320px",
+    phone: "375px",
+    tablet: "768px",
+    desktop: "1024px",
+    largeDesktop: "1440px",
   },
   container: {
-    maxWidth: 1200,
-    gap: 16,
+    maxWidth: "1200px",
+    gap: "16px",
   },
   timings: {
-    fast: 100,
-    normal: 250,
-    slow: 400,
+    fast: "100ms",
+    normal: "250ms",
+    slow: "400ms",
   },
   borderRadius: {
     normal: 4,
   },
   floating: {
     tooltip: {
-      offset: 10,
+      offset: "10px",
     },
     popover: {
-      offset: 10,
+      offset: "10px",
     },
     dropdown: {
-      offset: 10,
+      offset: "10px",
     },
     floater: {
-      shift: 5,
-      flip: 5,
+      shift: "5px",
+      flip: "5px",
       arrow: {
-        size: 10,
+        size: "10px",
       },
     },
   },
@@ -102,6 +102,6 @@ const theme = {
       },
     },
   },
-} as const;
+};
 
 export default theme;

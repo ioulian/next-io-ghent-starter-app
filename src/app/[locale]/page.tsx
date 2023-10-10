@@ -1,7 +1,18 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { css } from "@linaria/core";
+
+import { buildThemeCSSVars } from "@/components/styles/utils";
 
 import styles from "./page.module.css";
+
+const anotherTheme = css`
+  ${buildThemeCSSVars({
+    colors: {
+      primary: "red",
+    },
+  })}
+`;
 
 export default function Home() {
   const t = useTranslations("app");
@@ -39,7 +50,7 @@ export default function Home() {
         />
       </div>
 
-      <div className={styles.grid}>
+      <div className={`${styles.grid} ${anotherTheme}`}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
