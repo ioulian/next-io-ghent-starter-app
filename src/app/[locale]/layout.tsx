@@ -3,22 +3,27 @@ import "../../components/styles/styles.linaria.global";
 
 import { Source_Sans_3 } from "next/font/google";
 import { notFound } from "next/navigation";
-import { getTranslator } from "next-intl/server";
+import { getTranslator, unstable_setRequestLocale } from "next-intl/server";
 
-import { GenerateMetadataWithLocaleProps, LayoutPropsWithLocale } from "@/@types/pages";
+import {
+  GenerateMetadataWithLocaleProps,
+  LayoutPropsWithLocale,
+} from "@/@types/pages";
 
 import { locales } from "../../../i18n.config";
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({locale}));
+  return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({params: {locale}}: GenerateMetadataWithLocaleProps) {
-  const t = await getTranslator(locale, 'page');
+export async function generateMetadata({
+  params: { locale },
+}: GenerateMetadataWithLocaleProps) {
+  const t = await getTranslator(locale, "page");
 
   return {
-    title: t('home.metadata.title'),
-    description: t('home.metadata.description')
+    title: t("home.metadata.title"),
+    description: t("home.metadata.description"),
   };
 }
 
@@ -38,6 +43,7 @@ export default function RootLayout({
   if (!locales.includes(locale)) {
     notFound();
   }
+  unstable_setRequestLocale(locale);
 
   return (
     <html lang={locale} className={sourceSansPro.variable}>

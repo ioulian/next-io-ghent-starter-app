@@ -1,8 +1,12 @@
+import darken from "polished/lib/color/darken";
+
 const theme = {
   colors: {
     white: "#fff",
     black: "#000",
     primary: "#f38a5d",
+    primaryDarker: darken(0.1)("#f38a5d"),
+
     body: "#3C4346",
     backdrop: "rgba(0, 0, 0, 0.5)",
   },

@@ -2,6 +2,9 @@ const { resolve } = require("path");
 
 const withLinaria = require("next-with-linaria");
 const withNextIntl = require("next-intl/plugin")();
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -33,4 +36,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withNextIntl(withLinaria(nextConfig));
+module.exports = withNextIntl(withLinaria(withBundleAnalyzer(nextConfig)));

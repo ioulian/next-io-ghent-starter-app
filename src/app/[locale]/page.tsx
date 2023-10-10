@@ -1,8 +1,12 @@
+// TODO: enable later
+/* eslint-disable i18next/no-literal-string */
+
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { css, cx } from "@linaria/core";
 
 import { buildThemeCSSVars } from "@/components/styles/utils";
+import Button from "@/components/common/button/Button";
 
 import styles from "./page.module.css";
 
@@ -20,6 +24,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <p>{t("title")}</p>
+        <Button isLoading>Test</Button>
         <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"

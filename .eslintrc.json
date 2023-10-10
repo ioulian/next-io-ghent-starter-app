@@ -1,6 +1,6 @@
 {
-  "plugins": ["@typescript-eslint"],
-  "extends": ["next/core-web-vitals"],
+  "plugins": ["@typescript-eslint", "i18next"],
+  "extends": ["next/core-web-vitals", "plugin:i18next/recommended"],
   "rules": {
     "react/button-has-type": "error",
     "no-unused-vars": "off",

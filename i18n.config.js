@@ -13,5 +13,8 @@ module.exports = {
    */
   defaultLocale: "nl-BE",
 
+  /**
+   * @type {'as-needed' | 'always' | 'never'}
+   */
   localePrefix: "as-needed",
 };
