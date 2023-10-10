@@ -1,15 +1,14 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import styles from "./page.module.css";
 
 export default function Home() {
+  const t = useTranslations("app");
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
+        <p>{t("title")}</p>
         <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"

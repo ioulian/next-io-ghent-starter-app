@@ -1,0 +1,15 @@
+declare namespace NodeJS {
+  export interface ProcessEnv {
+    NEXT_PUBLIC_SITE_URL: string;
+    NEXT_PUBLIC_API_DOMAIN: string;
+    NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID?: string;
+    NEXT_PUBLIC_AUTH_COOKIE_MAX_AGE: string;
+    NEXT_PUBLIC_AUTH_LOGIN_URL: string;
+    NEXT_PUBLIC_AUTH_REFRESH_URL: string;
+    NEXT_PUBLIC_AUTH_CLIENT_ID: string;
+    NEXT_PUBLIC_AUTH_CLIENT_SECRET: string;
+    NEXT_PUBLIC_AUTH_REDIRECT_IF_LOGGED_OUT: string;
+    NEXT_PUBLIC_AUTH_REDIRECT_IF_LOGGED_IN: string;
+    NEXT_PUBLIC_WDYR_ENABLE?: string;
+  }
+}

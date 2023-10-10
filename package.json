@@ -4,27 +4,40 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run check-build-prerequisites && next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "next lint"
+    "analyze": "cross-env ANALYZE=true npm run build && serve .next/analyze",
+    "check": "npm run check-messages && npm run check-types && next lint",
+    "check-types": "tsc --noemit",
+    "check-messages": "ts-node -O '{\"module\":\"commonjs\"}' scripts/check-messages.ts",
+    "check-build-prerequisites": "ts-node -O '{\"module\":\"commonjs\"}' scripts/check-build-prerequisites.ts",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o docs"
   },
   "dependencies": {
     "next": "13.5.4",
+    "next-intl": "3.0.0-rc.4",
+    "polished": "4.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "next-with-linaria": "0.6.0",
     "@linaria/babel-preset": "5.0.3",
     "@linaria/core": "5.0.2",
     "@linaria/react": "5.0.3",
+    "@tabler/icons": "2.38.0",
     "@types/node": "20.8.3",
     "@types/react": "18.2.25",
     "@types/react-dom": "18.2.11",
     "@typescript-eslint/eslint-plugin": "6.7.4",
     "eslint": "8.51.0",
     "eslint-config-next": "13.5.4",
+    "next-with-linaria": "0.6.0",
     "prettier": "3.0.3",
+    "svg-sprite-loader": "6.0.11",
+    "svgo-loader": "4.0.0",
+    "ts-node": "10.9.1",
     "typescript": "5.2.2"
   }
 }
